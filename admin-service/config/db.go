@@ -3,7 +3,7 @@ package config
 import (
 	"log"
 	"os"
-	"payment-service/models"
+	"admin-service/models"
 
 	"gorm.io/driver/postgres"
 	"gorm.io/gorm"
@@ -18,6 +18,6 @@ func ConnectDatabase() {
 		log.Fatal("Failed to connect to database:", err)
 	}
 
-	db.AutoMigrate(&models.Payment{})
+	db.AutoMigrate(&models.Hotel{}, &models.Flight{})
 	DB = db
 }

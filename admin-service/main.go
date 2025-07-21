@@ -1,8 +1,8 @@
 package main
 
 import (
-	"payment-service/config"
-	"payment-service/routes"
+	"admin-service/config"
+	"admin-service/routes"
 
 	"github.com/gin-gonic/gin"
 )
@@ -10,6 +10,6 @@ import (
 func main() {
 	r := gin.Default()
 	config.ConnectDatabase()
-	routes.PaymentRoutes(r)
+	routes.AdminRoutes(r)
 	r.Run(":8080")
 }
